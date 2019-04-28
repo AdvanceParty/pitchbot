@@ -2,22 +2,22 @@ const sets = [];
 
 sets.push([
   [
-    `Why not make a movie called <%TITLE%>?`,
-    `Let's make a movie called <%TITLE%>?`,
-    `I reckon <%TITLE%> is a great name for a movie.`,
-    `<%TITLE%>. I'd love to see that!`,
-    `Can you believe there isn't a movie called <%TITLE%>?`,
-    `<%TITLE%>! Box. Office. Gold.`,
+    `Why not make a movie called <%TITLE%>`,
+    `Let's make a movie called <%TITLE%>`,
+    `<%TITLE%> is a great name for a movie.`,
+    `<%TITLE%> I'd love to see that!`,
+    `Can you believe there isn't a movie called <%TITLE%>`,
+    `<%TITLE%> Box. Office. Gold.`,
     `Here's an idea for a movie: <%TITLE%>`,
-    `<%TITLE%>! It practically writes itself.`,
-    `Fire up Kickstarter and let's get <%TITLE%> made already.`,
-    `I got a script here for <%TITLE%>.`,
-    `More romantic than Gone With The Wind, it's <%TITLE%>.`,
-    `Scarier than Psycho. I'm talking about <%TITLE%>.`,
-    `More excellent than Bill and Ted's adventure. It's <%TITLE%>.`,
-    `Trippier than 2001: A Space Odyssey. We're making <%TITLE%>.`,
-    `I'm thinking about a movie called <%TITLE%>.`,
-    `Let's make <%TITLE%>.`,
+    `<%TITLE%> It practically writes itself.`,
+    `Fire up Kickstarter and let's fund the shit out of <%TITLE%>`,
+    `I got a script here for <%TITLE%>`,
+    `More romantic than Gone With The Wind, it's <%TITLE%>`,
+    `Scarier than Psycho. I'm talking about <%TITLE%>`,
+    `More excellent than Bill and Ted's adventure. It's <%TITLE%>`,
+    `Trippier than 2001: A Space Odyssey. We're making <%TITLE%>`,
+    `I'm thinking about a movie called <%TITLE%>`,
+    `Let's make <%TITLE%>`,
   ],
 ]);
 
@@ -65,7 +65,6 @@ sets.push([
     ` get Mark Zuckerberg to finance`,
   ],
   [' <%TITLE%>'],
-  ['.', '.', '.', '.', '?', '!'],
 ]);
 
 module.exports = sets;
