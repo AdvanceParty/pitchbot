@@ -896,12 +896,14 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ENDPOINTS = {
-  GET_TITLE: '/getTitle'
+  GET_TITLE: '/.netlify/functions/getTitle'
 };
 
 var init = function init() {
   console.log('Running');
-  getTitle();
+  var wrapper = document.querySelector('#pitch');
+  var inner = document.querySelector('#pitchContent');
+  getTitle(wrapper, inner);
 };
 
 var getTitle =
@@ -909,25 +911,27 @@ var getTitle =
 function () {
   var _ref = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator.default.mark(function _callee() {
+  _regenerator.default.mark(function _callee(wrapper, inner) {
     var response, data;
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
+            wrapper.classList.add('thinking');
+            _context.next = 3;
             return callAPI(ENDPOINTS.GET_TITLE);
 
-          case 2:
+          case 3:
             response = _context.sent;
-            _context.next = 5;
+            _context.next = 6;
             return response.json();
 
-          case 5:
+          case 6:
             data = _context.sent;
+            inner.innerHTML = data;
             console.log(data);
 
-          case 7:
+          case 9:
           case "end":
             return _context.stop();
         }
@@ -935,7 +939,7 @@ function () {
     }, _callee);
   }));
 
-  return function getTitle() {
+  return function getTitle(_x, _x2) {
     return _ref.apply(this, arguments);
   };
 }();
@@ -973,7 +977,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58241" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57144" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

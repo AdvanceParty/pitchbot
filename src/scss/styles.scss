@@ -1,3 +1,13 @@
 body {
   color: #999;
 }
+
+#pitch {
+  p { display: none};
+  figcaption { display:block };
+
+  &.thinking {
+    p { display: block};
+    figcaption { display:none };
+  }
+}

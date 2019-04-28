@@ -2,4 +2,17 @@ body {
   color: #999;
 }
 
+#pitch p {
+  display: none;
+}
+#pitch figcaption {
+  display: block;
+}
+#pitch.thinking p {
+  display: block;
+}
+#pitch.thinking figcaption {
+  display: none;
+}
+
 /*# sourceMappingURL=/styles.5c8f3eab.css.map */
