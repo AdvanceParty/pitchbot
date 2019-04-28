@@ -3,11 +3,11 @@ body {
 }
 
 #pitch {
-  p { display: none};
-  figcaption { display:block };
+  p { display: block};
+  figcaption { display:none };
 
-  &.thinking {
-    p { display: block};
-    figcaption { display:none };
+  &.loading {
+    p { display: none};
+    figcaption { display:block };
   }
 }
