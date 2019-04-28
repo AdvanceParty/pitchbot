@@ -20,6 +20,7 @@ const setMessage = msg => {
 
 const getTitle = async () => {
   const data = await callAPI(ENDPOINTS.GET_TITLE);
+  console.log(data);
   setMessage(data);
 };
 
@@ -33,7 +34,7 @@ const callAPI = async endpoint => {
     message = 'Something went wrong. Oops.';
   } finally {
     setLoading(false);
-    return data;
+    return message;
   }
 };
 
