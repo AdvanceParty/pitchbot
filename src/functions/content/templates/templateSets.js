@@ -12,10 +12,10 @@ sets.push([
     `<%TITLE%>! It practically writes itself.`,
     `Fire up Kickstarter and let's get <%TITLE%> made already.`,
     `I got a script here for <%TITLE%>.`,
-    `More romantic than _Gone With The Wind_, it's <%TITLE%>.`,
-    `Scarier than _Psycho_. I'm talking about <%TITLE%>.`,
+    `More romantic than Gone With The Wind, it's <%TITLE%>.`,
+    `Scarier than Psycho. I'm talking about <%TITLE%>.`,
     `More excellent than Bill and Ted's adventure. It's <%TITLE%>.`,
-    `Trippier than _2001: A Space Odyssey_. We're making <%TITLE%>.`,
+    `Trippier than 2001: A Space Odyssey. We're making <%TITLE%>.`,
     `I'm thinking about a movie called <%TITLE%>.`,
     `Let's make <%TITLE%>.`,
   ],
@@ -64,8 +64,8 @@ sets.push([
     ` rule SXSW with`,
     ` get Mark Zuckerberg to finance`,
   ],
-  ['<%TITLE%>'],
-  ['', '', '', '', '?', '!'],
+  [' <%TITLE%>'],
+  ['.', '.', '.', '.', '?', '!'],
 ]);
 
 module.exports = sets;

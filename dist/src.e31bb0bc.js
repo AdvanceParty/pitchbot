@@ -900,10 +900,18 @@ var ENDPOINTS = {
 };
 
 var init = function init() {
-  console.log('Running');
-  var wrapper = document.querySelector('#pitch');
+  getTitle(); // testCss();
+};
+
+var testCss = function testCss() {
+  var data = "This is a movie <span class='title'>Title of Tomorrow</span>. Cool, hey?";
+  setMessage(data);
+  setLoading(false);
+};
+
+var setMessage = function setMessage(msg) {
   var inner = document.querySelector('#pitchContent');
-  getTitle(wrapper, inner);
+  inner.innerHTML = msg;
 };
 
 var getTitle =
@@ -911,27 +919,20 @@ var getTitle =
 function () {
   var _ref = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator.default.mark(function _callee(wrapper, inner) {
-    var response, data;
+  _regenerator.default.mark(function _callee() {
+    var data;
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            wrapper.classList.add('thinking');
-            _context.next = 3;
+            _context.next = 2;
             return callAPI(ENDPOINTS.GET_TITLE);
 
-          case 3:
-            response = _context.sent;
-            _context.next = 6;
-            return response.json();
-
-          case 6:
+          case 2:
             data = _context.sent;
-            inner.innerHTML = data;
-            console.log(data);
+            setMessage(data);
 
-          case 9:
+          case 4:
           case "end":
             return _context.stop();
         }
@@ -939,13 +940,63 @@ function () {
     }, _callee);
   }));
 
-  return function getTitle(_x, _x2) {
+  return function getTitle() {
     return _ref.apply(this, arguments);
   };
 }();
 
-var callAPI = function callAPI(endpoint) {
-  return fetch(endpoint);
+var callAPI =
+/*#__PURE__*/
+function () {
+  var _ref2 = (0, _asyncToGenerator2.default)(
+  /*#__PURE__*/
+  _regenerator.default.mark(function _callee2(endpoint) {
+    var message, response;
+    return _regenerator.default.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            setLoading(true);
+            _context2.prev = 1;
+            _context2.next = 4;
+            return fetch(endpoint);
+
+          case 4:
+            response = _context2.sent;
+            _context2.next = 7;
+            return response.json();
+
+          case 7:
+            message = _context2.sent;
+            _context2.next = 13;
+            break;
+
+          case 10:
+            _context2.prev = 10;
+            _context2.t0 = _context2["catch"](1);
+            message = 'Something went wrong. Oops.';
+
+          case 13:
+            _context2.prev = 13;
+            setLoading(false);
+            return _context2.abrupt("return", data);
+
+          case 17:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2, null, [[1, 10, 13, 17]]);
+  }));
+
+  return function callAPI(_x) {
+    return _ref2.apply(this, arguments);
+  };
+}();
+
+var setLoading = function setLoading(isLoading) {
+  var wrapper = document.querySelector('#pitch');
+  isLoading ? wrapper.classList.add('loading') : wrapper.classList.remove('loading');
 };
 
 init();
@@ -977,7 +1028,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57144" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62676" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

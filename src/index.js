@@ -2,33 +2,44 @@ const ENDPOINTS = {
   GET_TITLE: '/.netlify/functions/getTitle',
 };
 
-const init = () => {  
+const init = () => {
   getTitle();
+  // testCss();
 };
 
-const getTitle = async (wrapper, inner) => {
+const testCss = () => {
+  const data = "This is a movie <span class='title'>Title of Tomorrow</span>. Cool, hey?";
+  setMessage(data);
+  setLoading(false);
+};
+
+const setMessage = msg => {
   const inner = document.querySelector('#pitchContent');
-  const data = await callAPI(ENDPOINTS.GET_TITLE);
-  inner.innerHTML = data;
+  inner.innerHTML = msg;
 };
 
-const callAPI = endpoint => {
+const getTitle = async () => {
+  const data = await callAPI(ENDPOINTS.GET_TITLE);
+  setMessage(data);
+};
+
+const callAPI = async endpoint => {
   setLoading(true);
   let message;
   try {
     const response = await fetch(endpoint);
     message = await response.json();
   } catch (e) {
-    message = "Something went wrong. Oops."
+    message = 'Something went wrong. Oops.';
   } finally {
     setLoading(false);
     return data;
   }
 };
 
-const setLoading = (isLoading) => {
+const setLoading = isLoading => {
   const wrapper = document.querySelector('#pitch');
-  isLoading ? wrapper.classList.add('loading') : wrapper.classList.remove('loading')
-}
+  isLoading ? wrapper.classList.add('loading') : wrapper.classList.remove('loading');
+};
 
 init();

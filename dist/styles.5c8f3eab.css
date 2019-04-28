@@ -1,18 +1,58 @@
-body {
-  color: #999;
+@import url("https://fonts.googleapis.com/css?family=Bungee+Shade|Baloo+Da");
+html {
+  font-size: 10px;
 }
 
+body {
+  background: #000;
+  color: #FCDE9C;
+  margin: 0;
+  font-family: "Baloo Da", sans;
+  font-size: calc(7vw);
+  line-height: 1.2em;
+  padding: 2rem 10rem;
+}
+body h1 {
+  color: #000;
+  font-family: "Bungee Shade", cursive;
+  font-size: 3rem;
+}
+body::before {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.7;
+  content: "Hollywood";
+  text-indent: -9999px;
+  background: url(/bg.c5f0adfe.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+}
+
+#pitch {
+  margin: 0;
+  padding: 0;
+}
 #pitch p {
-  display: none;
+  display: block;
+  text-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.7);
 }
 #pitch figcaption {
-  display: block;
-}
-#pitch.thinking p {
-  display: block;
-}
-#pitch.thinking figcaption {
   display: none;
+}
+#pitch.loading p {
+  display: none;
+}
+#pitch.loading figcaption {
+  display: block;
+}
+#pitch .title {
+  color: #ffa552;
 }
 
 /*# sourceMappingURL=/styles.5c8f3eab.css.map */
